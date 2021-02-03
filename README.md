@@ -2,13 +2,19 @@ This module provides table implementation with advanced sorting and filtering fe
 
 # Class Names
 
-SearchFilterTable
+CSVImporter
 
 ## Functionality
 
-The component will display a paginated table with per column sorting and complex filtering tools.
+The component will display a clickable file picker.
 
-It allows outcomes to be attached at table and row level
+Once a file is chosen, the contents are inserted into a list value in flow.
+
+The type of the objects is defined in attributes.
+
+The column mapping is defined in the display columns.
+
+The OnSelect outcome is triggered if defined.
 
 ## Datasource
 
@@ -17,45 +23,26 @@ Set the datasource to a list of objects
 
 ## State
 
-Create a State LIST object of the type of the model data items.
+Set it to the same list as the model the model data items.
 
 
 ## Outcomes
 
-Any outcome attached to the component is dealt with in this way: -
+### OnSelect
 
-* If the outcome is set as "Appears At Top" then it will become a button in the top title bar or its context menu otherwise it becomes a button on the tree node or its context menu.
+Only the OnSelect outcome is used, it is optional and triggered if existing once a file is chosen and the state data is set.
 
-* If the outcome has its "When this outcome is selected" option set to either "Save Changes" or "Partially Save Changes" and is attached 
-to a tree node then the current node is set as the state value when triggered.
 
-* If the outcome has an "icon" attribute then this value is used to specify the icon, otherwise a default "+" icon is used.  Note: Icons are 
-bootstrap glyphicons without the "glyphicon-" prefix e.g. "trash","edit" etc.
+## Outcomes Attributes
 
-* If the outcome has a "Label" set then this is used as the tooltip otherwise the outcome's name is used.
-
-* "OnSelect" is a special case and is attached to the action of clicking a tree node.
-
-* If the outcome's developer name begins with "CM" (case insensitive) then the outcome is added to either the main tree or the current node's context menu rather than as a button.
-
-* All outcomes including "OnSelect" are optional.
-
-* Outcome order is respected.  
-
-* The expand and contract default buttons in the title bar are given order 10 & 20 respectively to allow for controlling button display order and injecting your outcome around them.
-
-## Outcome Attributes
-
-### icon
-
-Sets the glyphicon to show for the outcome.
+Not applicable
 
 
 ## Settings
 
 ### Columns
 
-Sets the display columns for the table.
+Sets the csv field mappings to object fields in the order specified.
 
 ### Label
 
@@ -67,9 +54,6 @@ If specified then these are applied as pixel values.
 
 ## Component Attributes
 
-### PaginationSize
-
-Sets the max number of rows to show per pagination page
 
 ### classes
 
