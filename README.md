@@ -54,8 +54,16 @@ If specified then these are applied as pixel values.
 
 ## Component Attributes
 
+### FirstRowHeaders
 
-### classes
+If defined and set to "true" then the first row of the file is considered headers and ignored
+
+### FlowTypeName
+
+Sets the type name of the objects to be created and inserted into the list.  The long type name.
+
+
+## classes
 
 Like all components, adding a "classes" attribute will cause that string to be added to the base component's class value
 
