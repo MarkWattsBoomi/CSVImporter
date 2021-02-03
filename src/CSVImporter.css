@@ -1,0 +1,38 @@
+.csv {
+    display: block;
+    flex-direction: row;
+    position: relative;
+    border: 1px solid #fefefe;
+    margin-bottom: 1rem;
+    background-color: #2f2f32;
+}
+
+.csv-title {
+    
+    margin-left: 0.5rem;
+}
+.csv-title-text {
+    color: #fefefe;
+    font-size: 0.9rem;
+}
+
+.csv-input {
+    color: #fefefe;
+    font-size: 0.9rem;
+    margin-left: 0.5rem;
+}
+
+.csv-filename {
+    background-color: #fefefe;
+    padding: 0.3rem;
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+}
+
+.csv-filename-text {
+    color: #000;
+    margin: auto;
+    font-size: 0.9rem;
+}
+
