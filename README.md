@@ -1,4 +1,5 @@
-This module provides table implementation with advanced sorting and filtering features. 
+This module provides a configurable CSV file importer which will push the contents into a List value in Flow. 
+
 
 # Class Names
 
@@ -10,9 +11,11 @@ The component will display a clickable file picker.
 
 Once a file is chosen, the contents are inserted into a list value in flow.
 
-The type of the objects is defined in attributes.
+No specific Type is required, just a list of any type
 
-The column mapping is defined in the display columns.
+The type name of the objects is defined in attributes.
+
+The column mapping<->attribue name is defined in the display columns.
 
 The OnSelect outcome is triggered if defined.
 
