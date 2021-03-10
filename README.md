@@ -1,3 +1,5 @@
+![CSV Image](https://github.com/MarkWattsBoomi/CSVImporter/blob/main/csv.png)
+
 This module provides a configurable CSV file importer which will push the contents into a List value in Flow. 
 
 
