@@ -2,6 +2,7 @@
 
 This module provides a configurable CSV file importer which will push the contents into a List value in Flow. 
 
+Pair it up with a SearchFilterTable to have import then select items
 
 # Class Names
 
