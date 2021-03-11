@@ -4,6 +4,13 @@ This module provides a configurable CSV file importer which will push the conten
 
 Pair it up with a SearchFilterTable to have import then select items
 
+The latest version can be included in your player from this location: -
+
+```
+https://files-manywho-com.s3.amazonaws.com/e1dbcceb-070c-4ce6-95b0-ba282aaf4f48/csv.js
+https://files-manywho-com.s3.amazonaws.com/e1dbcceb-070c-4ce6-95b0-ba282aaf4f48/csv.css
+```
+
 # Class Names
 
 CSVImporter
