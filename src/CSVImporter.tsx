@@ -1,6 +1,6 @@
 import React, { CSSProperties } from 'react';
 
-import { eLoadingState, FlowComponent,  FlowOutcome,  FlowMessageBox, FlowObjectDataProperty, FlowObjectDataArray, FlowObjectData, FlowDisplayColumn } from 'flow-component-model';
+import { eLoadingState, FlowComponent,  FlowOutcome,  FlowMessageBox, FlowObjectDataProperty, FlowObjectDataArray, FlowObjectData, FlowDisplayColumn, eContentType } from 'flow-component-model';
 import FlowContextMenu from 'flow-component-model/lib/Dialogs/FlowContextMenu';
 
 import './CSVImporter.css';
@@ -170,9 +170,28 @@ export default class CSVImporter extends FlowComponent {
     makeObjectDataFromRow(row: string[]) : FlowObjectData {
         let result: FlowObjectData = FlowObjectData.newInstance(this.flowTypeName);
         this.model.displayColumns.forEach((col: FlowDisplayColumn) => {
+            let val: string = "";
+                switch(col.contentType) {
+                    case eContentType.ContentDateTime:
+                        let dt: Date;
+                        try {
+                            dt = new Date(row[col.displayOrder]);
+                        }
+                        catch (e) {
+                            dt = undefined;
+                        }
+                        if((dt instanceof Date && !isNaN(dt.getTime())) === true) {
+                            val=dt.toISOString();
+                        }
+                        break;
+                    default:
+                        val=row[col.displayOrder];
+
+                }
             result.addProperty(
+                
                 FlowObjectDataProperty.newInstance(
-                    col.developerName, col.contentType,row[col.displayOrder]
+                    col.developerName, col.contentType,val
                 )
             );
         })
